@@ -40,6 +40,7 @@ function initialPrompt() {
    console.log("Let's play some scrabble!\n");
    let enteredWord = input.question("Enter a word to score: ");
 
+
    let scoringMethod = scorerPrompt();
 
       console.log(`Score for '${enteredWord}': ${scoringAlgorithms[scoringMethod].scorerFunction(enteredWord)}`);
@@ -115,9 +116,13 @@ function scorerPrompt() {
 1 - Vowel Bonus: Vowels are worth 3 points
 2 - Scrabble: Uses scrabble point system`)
    
-   return input.question("Enter 0, 1, or 2: ");
+   let answer = input.question("Enter 0, 1, or 2: ");
 
-
+   while (answer > 2 || answer < 0) {
+      answer = input.question("Invalid input! Please enter 0, 1, or 2: ");
+   }
+      
+   return answer;
 }
 
 function transform(oldPointStructure) {
@@ -132,6 +137,7 @@ function transform(oldPointStructure) {
       }
      
    }
+   resultObject[" "] = 0;
 
    return resultObject;
 };
