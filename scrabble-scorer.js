@@ -137,7 +137,7 @@ function transform(oldPointStructure) {
       }
      
    }
-   resultObject[" "] = 0;
+   
 
    return resultObject;
 };
