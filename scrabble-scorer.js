@@ -51,14 +51,7 @@ const newPointStructure = transform(oldPointStructure);
 
 
 let simpleScorer = function(word) {
-   let wordScore = 0;
-   word = word.toUpperCase();
-
-   for (i = 0; i < word.length; i++) {
-      wordScore++;
-   }
-
-   return wordScore;
+   return word.length;
 };
 
 
