@@ -75,7 +75,6 @@ let scrabbleScorer = function(word) {
    word = word.toLowerCase();
 
    let score = 0;
-   let letter = '';
  
 	for (let i = 0; i < word.length; i++) {
       score += newPointStructure[word[i]]
